@@ -39,10 +39,10 @@
                 <label for="exampleFormControlInput1">Date</label>
                 <input type="date" class="form-control" id="exampleFormControlInput1">
             </div>
-
+        {!! Form::open(['route' => 'signup.post']) !!}
             <div class="form-group">
-                <label for="exampleFormControlInput1">Name</label>
-                <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Taro Yamada">
+                {!! Form::label('name', '名前') !!}
+                {!! Form::text('name', old('name'), ['class' => 'form-control']) !!}
             </div>
             <div class="form-group">
                 <label for="exampleFormControlFile1">Image</label>
@@ -61,13 +61,14 @@
             </div>
 
             <div class="form-group">
-                <label for="exampleFormControlTextarea1">Memo</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                {!! Form::label('memo', 'MEMO') !!}
+                {!! Form::text('memo', old('memo'), ['class' => 'form-control']) !!}
             </div>
 
             <div class="text-right">
-                    <button type="submit" class="btn btn-primary text-right">Add</button>
+                    {!! Form::submit('Add', ['class' => 'btn btn-primary mt-2']) !!}
             </div>
+        {!! Form::close() !!}
         </form>
 </main>
     <footer class="page-footer font-small special-color-dark pt-4"　style="background-color: aquamarine;">
