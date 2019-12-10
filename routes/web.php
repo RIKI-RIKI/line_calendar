@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/', 'FriendsController@index')->name('top');
 Route::resource('friends', 'FriendsController', ['only' => ['create', 'store']]);
 
