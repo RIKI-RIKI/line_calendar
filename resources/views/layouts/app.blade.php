@@ -12,89 +12,10 @@
     
     @include('commons.header')
     
-    <main>
-        <form method="POST" action="{{ route('friends.store') }}">
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Date</label>
-                <input type="date" class="form-control" id="exampleFormControlInput1">
-            </div>
-        {!! Form::open(['route' => 'signup.post']) !!}
-            <div class="form-group">
-                {!! Form::label('name', '名前') !!}
-                {!! Form::text('name', old('name'), ['class' => 'form-control']) !!}
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlFile1">Image</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1">
-            </div>
-
-            <div class="form-group">
-                <label for="exampleFormControlSelect1">Category</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                <option>Work</option>
-                <option>School</option>
-                <option>Club</option>
-                <option>Hobby</option>
-                <option>Leisure</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                {!! Form::label('memo', 'MEMO') !!}
-                {!! Form::text('memo', old('memo'), ['class' => 'form-control']) !!}
-            </div>
-
-            <div class="text-right">
-                    {!! Form::submit('Add', ['class' => 'btn btn-primary mt-2']) !!}
-            </div>
-        {!! Form::close() !!}
-        </form>
-</main>
-    <footer class="page-footer font-small special-color-dark pt-4"　style="background-color: aquamarine;">
-
-            <!-- Footer Elements -->
-        <div class="container">
-            <!-- Social buttons -->
-            <ul class="list-unstyled list-inline text-center" style = "display: flex;">
-                <div class = twitters style="margin: 0 auto; display: flex;">
-                    <div class = "p-2">
-                        <li>Nanaka's Twitter</li>
-                        <li class="list-inline-item">
-                            <a href="{{ url('https://twitter.com/nanakaglucklich') }}">
-                                <img src="https://img.icons8.com/dusk/48/000000/twitter-circled.png">
-                            </a>
-                        </li>
-                    </div>
-                    <div class= "p-2">
-                        <li>Riki's Twitter</li>
-                        <li class="list-inline-item">
-                            <a href = "https://twitter.com/nakamuraPHP">
-                                <img src="{{ url('https://img.icons8.com/dusk/48/000000/twitter-circled.png') }}">
-                            </a>
-                        </li>
-                    </div>
-                </div>
-            <!-- <li class="list-inline-item">
-                <a class="btn-floating btn-gplus mx-1">
-                <i class="fab fa-google-plus-g"> </i>
-                </a>
-            </li>
-            <li class="list-inline-item">
-                <a class="btn-floating btn-li mx-1">
-                <i class="fab fa-linkedin-in"> </i>
-                </a>
-            </li>
-            <li class="list-inline-item">
-                <a class="btn-floating btn-dribbble mx-1">
-                <i class="fab fa-dribbble"> </i>
-                </a> 
-            </li>-->
-            </ul>
-            <!-- Social buttons -->        
-        </div>
-        <!-- Footer Elements -->
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2020 Nanaka&Riki All Rights Reserved.</div>
-    <!-- Copyright -->    
+    <a href="{{ route('friends.create') }}">
+   新規投稿 
+</a>
+    
+    @include('commons.footer') 
 </body>
 </html>

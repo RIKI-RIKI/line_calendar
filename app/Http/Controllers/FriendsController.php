@@ -13,12 +13,15 @@ class FriendsController extends Controller
         return view('friends.create');
     }
     public function store(Request $request){
+        dd($request);
         $params = $request->validate([
+                'name' => 'required|max:256',
+                'memo' => 'required|max:256',
                 
         ]);
         
             
         
-        return redirect()->route('index');
+        return redirect()->route('friends.index');
     }
 }
