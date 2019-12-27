@@ -18,5 +18,6 @@ Route::resource('friends', 'FriendsController', ['only' => ['create', 'store']])
 Route::POST('/friends/search', 'FriendsController@search')->name('friends.search');
 
 
-Route::get('signup', 'Auth\RegisterController@showRegistrationForm')->name('signup');
-Route::post('signup', 'Auth\RegisterController@register')->name('signup.post');
+Route::get('/index','FriendsController@getHoliday');
+Route::post('/index','FriendsController@postHoliday');
+

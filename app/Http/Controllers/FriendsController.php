@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Friend;
+use App\Holiday;
+
 class FriendsController extends Controller
 {  
     public function index(){
@@ -20,4 +22,13 @@ class FriendsController extends Controller
         $posts = Friends::where('title',$request->search)->paginate(5);
         
     }
+    public function getHoliday(Request $request)
+    {
+        // 休日データ取得
+        $list = Holiday::all();
+       
+       
+        return view('friends.index', ['list' => $list]);        
+    }
+    
 }
